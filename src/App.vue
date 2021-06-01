@@ -1,7 +1,7 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <p class="text-[#ccb]">Hello world</p>
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" />
+  <img alt="Vue logo" src="./assets/logo.png" />
 </template>
 
 <script lang="ts">

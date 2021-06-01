@@ -10,7 +10,8 @@
     "vue": "^3.0.5"
   },
   "devDependencies": {
-    "@commitlint/rules": "^12.1.4",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
     "@vitejs/plugin-vue": "^1.2.3",
@@ -32,5 +33,23 @@
     "typescript": "^4.3.2",
     "vite": "^2.3.5",
     "vue-tsc": "^0.0.24"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{json,css,sass,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.{js,vue,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix",
+      "stylelint",
+      "git add"
+    ]
   }
 }
