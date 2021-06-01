@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "prepare": "husky install",
+    "lint:script": "eslint --ext .ts,vue --ignore-path .gitignore ."
   },
   "dependencies": {
     "vue": "^3.0.5"
@@ -29,16 +31,12 @@
     "prettier": "^2.3.0",
     "sass": "^1.34.0",
     "sass-loader": "^11.1.1",
+    "stylelint": "^13.13.1",
+    "stylelint-config-recommended": "^5.0.0",
     "tailwindcss": "^2.1.2",
     "typescript": "^4.3.2",
     "vite": "^2.3.5",
     "vue-tsc": "^0.0.24"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "src/**/*.{json,css,sass,md}": [
